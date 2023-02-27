@@ -1,10 +1,9 @@
 import "./style.css";
 import typescriptLogo from "./typescript.svg";
 import { setupCounter } from "./counter";
-import { logger as loog } from "./logger";
+import { logger } from "./logger";
 
-loog.debug.red("red label", { foo: "bar" });
-loog.log.blue("blue label", { amy: "is great" });
+logger.debug.red("red label", { foo: "bar" });
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
