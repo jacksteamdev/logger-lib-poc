@@ -3,6 +3,7 @@ import typescriptLogo from "./typescript.svg";
 import { setupCounter } from "./counter";
 import { logger } from "./logger";
 
+// usage for logger, vite plugin adds extra function call
 logger.debug.red("red label", { foo: "bar" });
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
