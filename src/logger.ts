@@ -1,6 +1,7 @@
 import { createLogger } from "./lib/createLogger";
 
 export const logger = createLogger({
+  // "debug" in logger.debug.red(...)
   levels: [
     {
       debug: ({ method, args }) => {
@@ -26,6 +27,7 @@ export const logger = createLogger({
       },
     },
   ],
+  // "red" in logger.debug.red(...)
   modifiers: [
     {
       red: ({ method, args: [label, ...args] }) => {
