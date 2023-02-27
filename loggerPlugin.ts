@@ -4,7 +4,7 @@ import { findNodeAround, simple, Found, findNodeAfter } from "acorn-walk";
 import MagicString from "magic-string";
 
 export function loggerPlugin({
-  loggerConfigFile: loggerConfigPath,
+  loggerConfigFile,
 }: {
   /** Relative path from project root to logger config file */
   loggerConfigFile: string;
@@ -26,7 +26,7 @@ export function loggerPlugin({
       for (const i of imports) {
         if (typeof i.n === "string") {
           const imported = await this.resolve(i.n, id);
-          if (imported?.id.slice(config.root.length) === loggerConfigPath) {
+          if (imported?.id.endsWith(loggerConfigFile)) {
             loggerImport = i;
             break;
           }
